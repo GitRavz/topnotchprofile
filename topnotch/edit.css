@@ -1,0 +1,267 @@
+/* Reset some default styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Required for positioning the pseudo-element */
+}
+
+.container {
+  max-width: 450px;
+  margin: 40px auto;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+.close-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #000;
+  left: 955px;
+  top: 85px;
+  margin-top: -75px;
+  margin-left: -75px;
+  position: absolute;
+  display: block;
+  z-index: 200;
+  text-indent: -9999px;
+  box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.close-button:before,
+.close-button:after {
+  content: '';
+  width: 55%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 48%;
+  left: 22%;
+}
+
+.close-button:before {
+  transform: rotate(-45deg);
+}
+
+.close-button:after {
+  transform: rotate(45deg);
+}
+
+.close-button:hover:before,
+.close-button:hover:after {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+}
+
+.close-button:hover {
+  background-color: #fcbc1c;
+  color: #000;
+}
+
+.upload-button {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  transition: background-color 0.4s ease; 
+}
+.upload-button:hover{
+  background-color: #fcbc1c;
+  color: #000;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+
+.profile-picture-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.profile-picture-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-picture {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  margin-bottom: 20px;
+}
+
+.choose-file-button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choose-file-button:hover {
+  background-color: #45a049;
+}
+
+.button-group {
+  text-align: center;
+}
+
+.save-button,
+.cancel-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+ 
+ .save-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ }
+ 
+ .save-button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+ }
+ 
+ .save-button:hover span {
+  padding-right: 15px;
+ }
+ 
+ .save-button:hover span:after {
+  opacity: 1;
+  right: 0;
+ }
+ .save-button:hover{
+  background-color:#fcbc1c ;
+  color: #000;
+ }
+
+.cancel-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.cancel-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ }
+ 
+ .cancel-button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+ }
+ 
+ .cancel-button:hover span {
+  padding-right: 15px;
+ }
+ 
+ .cancel-button:hover span:after {
+  opacity: 1;/* Reset some default styles */
+}
+
+.cancel-button:hover{
+  background-color:#fcbc1c ;
+  color: #000;
+}
+/* Media Query for mobile devices */
+@media only screen and (max-width: 1080px) {
+  .container {
+    max-width: 100%; /* Adjust to fit the screen */
+    margin: 20px; /* Add some space around the container */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+  
+  .close-button {
+    top: 2%; /* Adjust close button position */
+    left: 83%; /* Adjust close button position */
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+#profile-picture {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width: 1080px) {
+  #profile-picture {
+      max-width: 150px; /* Adjust as needed for smaller screens */
+      padding: 5px; /* Adjust padding for smaller screens */
+  }
+}
