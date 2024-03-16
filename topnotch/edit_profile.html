@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="css/edit.css">
+</head>
+<body>
+  <div class="container">
+    <a class="close-button" href="profile.html">Close</a>
+    <h1>Edit Profile</h1>
+    <form id="edit-form" onsubmit="return validateForm()">
+      <div class="form-group">
+        <!-- Profile Picture with Button -->
+        <div>
+          <img id="profile-picture" src="images/default_profile.jpg" alt="Profile Picture" style="max-width: 200px; display: block; margin: 0 auto;  padding: 10px; border-radius: 100%;">
+        </div>
+        <div>
+          <button type="button" class="upload-button" onclick="document.getElementById('profile-picture-input').click()">
+            <span>Upload </span>
+          </button>
+          <input type="file" id="profile-picture-input" name="profile-picture" style="display: none;" onchange="displayProfilePicture()">
+        </div>
+      </div>
+      <!-- Remaining form fields -->
+      <div class="form-group">
+        <label for="user info">User Info</label><br><br> 
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Full name:">
+      </div>
+      <div class="form-group">
+        <label for="title">Title or Position:</label>
+        <input type="text" id="title" name="title" placeholder="Title or position:">
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact #:</label>
+        <input type="text" id="contact" name="contact" placeholder="Phone number:" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        <!-- ^ This input attribute restricts input to only numbers -->
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Address:"></textarea>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="save-button" onclick="saveProfile()">
+          <span>Save</span>
+        </button>
+        <button type="button" class="cancel-button" onclick="window.location.href='profile.html'">
+          <span>Cancel</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function displayProfilePicture() {
+      const input = document.getElementById('profile-picture-input');
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('profile-picture').src = e.target.result;
+      }
+      reader.readAsDataURL(file);
+    }
+
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var title = document.getElementById("title").value;
+      var contact = document.getElementById("contact").value;
+      var address = document.getElementById("address").value;
+      var profilePicture = document.getElementById("profile-picture-input").value;
+
+      if (name === "" || title === "" || contact === "" || address === "" || profilePicture === "") {
+        alert("Please fill in all fields");
+        return false;
+      }
+      return true;
+    }
+
+    function saveProfile() {
+      if (validateForm()) {
+        // Code to save profile information goes here
+        alert("Profile saved successfully!");
+      }
+    }
+  </script>
+</body>
+</html>

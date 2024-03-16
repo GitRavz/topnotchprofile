@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #fcbc1c 50%, #fff 50%);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(248, 248, 248, 0.1);
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff; /* Set a solid background color */
+}
+
+@media only screen and (max-width: 1080px) {
+  .container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.profile-details {
+  margin: 10px;
+  margin-right:10px;
+  
+}
+.profile-details div {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  text-align: left;
+  margin-bottom: 5px;
+}
+.profile-details label {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  width: 100px; /* Fixed width for labels */
+  margin-right: -10px; /* Add some space between label and content */
+}
+.profile-details p{
+  margin: 5px;
+  margin-top: 2px;
+  margin-left: 20px;
+  
+
+  
+}
+
+.container button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.container button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+ }
+ 
+ .container button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -9px;
+  transition: 0.3s;
+ }
+ 
+ .container button:hover span {
+  padding-right: 15px;
+ }
+ 
+ .container button:hover span:after {
+  opacity: 1;/* Reset some default styles */
+}
+
+.container button:hover{
+  background-color:#fcbc1c ;
+  color: #000;
+}
+
+/* Media Queries for Responsive Layout */
+@media only screen and (max-width: 600px) {
+  .profile-info label {
+    width: auto;
+  } 
+
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1080px) {
+  #profile-picture {
+      max-width: 150px; /* Adjust as needed for smaller screens */
+      padding: 5px; /* Adjust padding for smaller screens */
+  }
+}
